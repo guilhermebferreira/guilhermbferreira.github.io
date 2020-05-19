@@ -5,9 +5,32 @@
     <meta charset='utf-8'>
     <title>Guilherme Ferreira - Sobre</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
 
+        function getIdade() {
+            var aniversario = new Date("May 14,1988");
+            return calculateAge(aniversario);
+        }
 
-    </style>
+        function getAnosXP() {
+
+            var start = new Date("Jun 01,2009");
+            var anosXp = calculateAge(start);
+            return round5(anosXp);
+        }
+
+        function calculateAge(birthday) {
+            var ageDifMs = Date.now() - birthday;
+            var ageDate = new Date(ageDifMs);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+
+        function round5(x) {
+            return (x % 5) >= 2.5 ? parseInt(x / 5) * 5 : parseInt(x / 5) * 5;
+        }
+
+    </script>
+
   </head>
 
   <body>
@@ -178,7 +201,7 @@
                x="0"
                y="21.253349"><tspan>PHP, Python e Javascript, com mais </tspan></tspan><tspan
                x="0"
-               y="31.880023"><tspan>de 10 anos de experiência e bom </tspan></tspan><tspan
+               y="31.880023"><tspan>de <script>document.write(getAnosXP())</script> anos de experiência e bom </tspan></tspan><tspan
                x="0"
                y="42.506698"><tspan>domínio do  inglês</tspan></tspan></text><text
              id="text1156"
